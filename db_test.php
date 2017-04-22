@@ -9,6 +9,7 @@
     while ($row = mysqli_fetch_assoc($result))
     {
       echo "ID: ".$row["id"]."<br />";
+      echo "name: ".$row["name"]."<br />";
       echo "username: ".$row["username"]."<br />";
       echo "password: ".$row["password"]."<br />";
       echo "Date: ".$row["date"]."<br />";

@@ -27,6 +27,8 @@
          {
            if($row['password'] == $p)
            {
+             $_SESSION["name"] = $row['name'];
+             $_SESSION["id"] = $row['id'];
              echo "You have logged in!";
              header('Location:./blog.php');
            }

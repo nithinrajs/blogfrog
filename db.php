@@ -38,20 +38,40 @@
         echo "Server connection has been established!<br />";
       }
 
-    $table = "CREATE TABLE users(
-      id int(11) AUTO_INCREMENT PRIMARY KEY, 
-      username varchar(240) NOT NULL,
+    $table_1 = "CREATE TABLE users(
+      id int(11) AUTO_INCREMENT,
+      name varchar(240) NOT NULL,
+      username varchar(240) NOT NULL UNIQUE,
       password varchar(240) NOT NULL,
-      date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP)";
+      date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      PRIMARY KEY(id, name))";
    
-    if(mysqli_query($conn,$table))
+    if(mysqli_query($conn,$table_1))
     {
-      echo "Table Created!<br />";
+      echo "USERS Table Created!<br />";
     }
      else
       {
-        echo "Table Creation Failed! ".mysqli_error($conn);
+        echo "USERS Table Creation Failed! ".mysqli_error($conn);
       }
+
+    $table_2 = "CREATE TABLE blog(
+      blogid int(11) AUTO_INCREMENT PRIMARY KEY,
+      id int(11),
+      name varchar(240),
+      username varchar(240),
+      blog longtext,
+      date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY(id, name) REFERENCES users(id, name))";
+
+    if(mysqli_query($conn,$table_2))
+    {
+      echo "BLOG Table Created!<br />";
+    }
+    else
+    {
+      echo "BLOG Table Creation Failed! ".mysqli_error($conn);
+    }
      mysqli_close($conn); 
   
   ?>
