@@ -1,13 +1,15 @@
-<?php
-  session_start();
-?>
 <html>
+  <head>
+    <title>BlogFrog</title>
+  </head>
   <body>
-    <h2>BLOG</h2>
-    <?php
-      echo "Hi ".$_SESSION["name"]."<br />";
-      echo "USER: ".$_SESSION["user"]."<br />";
-      echo "ID: ".$_SESSION["id"]."<br />";
+    <h2>BlogFrog</h2>
+    <?
+       include("config.php");
+       
+    
+    
+    
     ?>
   </body>
 </html>

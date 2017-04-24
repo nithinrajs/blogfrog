@@ -60,6 +60,7 @@
       id int(11),
       name varchar(240),
       username varchar(240),
+      article varchar(240),
       blog longtext,
       date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
       FOREIGN KEY(id, name) REFERENCES users(id, name))";
