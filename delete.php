@@ -3,7 +3,8 @@
 ?>
 <html>
   <body>
-    <h2>BLOG</h2>
+    <h2>DELETE</h2><br />
+    <p>Enter the Blog ID of the article you would like to delete!</p><br /><br />
     <?php
       include("config.php");
       echo "Hi ".$_SESSION["name"]."<br />";
@@ -25,10 +26,14 @@
         echo "NO BLOGS AVAILABLE<br />";
       }
     ?>
+    
+    <form action="delete_delid.php" method="post">
+       <input type="text" name="delid" placeholder="BLOG ID">
+      <input type="submit" value="DELETE"><br />
+    </form>
     <ul>
       <li><a href="./acc_create.php">CROAK A BLOG</a></li>
       <li><a href="">EDIT A BLOG</a></li>
-      <li><a href="./delete.php">DELETE A BLOG</a></li>
       <li><a href="./logout.php">LOGOUT</a></li> 
     </ul>
   </body>
