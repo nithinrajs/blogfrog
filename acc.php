@@ -10,7 +10,9 @@
       //echo "USER: ".$_SESSION["user"]."<br />";
       //echo "ID: ".$_SESSION["id"]."<br />";
       $id = $_SESSION["id"];
-      $display = "SELECT blogid,article,blog,date FROM blog where id = '$id'";
+      $name = $_SESSION["name"];
+      //$display = "SELECT blogid,article,blog,date FROM blog where id = '$id'";
+      $display = "SELECT blogid,article,blog,date FROM blog where name = '$name'";
       $result = mysqli_query($conn,$display);
       if(mysqli_num_rows($result) > 0)
       {
